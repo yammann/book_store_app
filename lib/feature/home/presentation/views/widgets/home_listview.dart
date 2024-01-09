@@ -10,7 +10,6 @@ class HomeListView extends StatelessWidget {
       height: MediaQuery.of(context).size.height * .3,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        padding: const EdgeInsets.only(left: 20),
         itemBuilder: (context, index) {
         return const HomeListViewItem();
       },),
