@@ -8,13 +8,13 @@ class HomeAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 55,left: 24,right: 24,bottom: 5),
+      padding: const EdgeInsets.only(top: 30,left: 24,right: 24,),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Image.asset(AssetsData.logo,width: 50,height: 50,),
-          Spacer(),
-          IconButton(onPressed: (){}, icon:FaIcon(FontAwesomeIcons.magnifyingGlass))
+          Image.asset(AssetsData.logo,width: 60,height: 60,),
+          const Spacer(),
+          IconButton(onPressed: (){}, icon:const FaIcon(FontAwesomeIcons.magnifyingGlass))
         ],
       ),
     );

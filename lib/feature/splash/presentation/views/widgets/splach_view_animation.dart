@@ -25,13 +25,13 @@ class _SplachViewAnimationState extends State<SplachViewAnimation>
 
   void navigateToHomeView() {
      Future.delayed(const Duration(seconds: 3),(){
-      Get.to(()=>const HomeView(),transition: Transition.fade,duration: const Duration(milliseconds: 700));
+      Get.to(()=>const HomeView(),transition: Transition.fade,duration: const Duration(seconds: 2));
     });
   }
 
   void initSlidAnimation() {
     animationController =
-        AnimationController(vsync: this, duration:  Duration(seconds:1));
+        AnimationController(vsync: this, duration:  const Duration(seconds:1));
     slaidAnimation = Tween<Offset>(begin: const Offset(1, 0), end: Offset.zero)
         .animate(animationController);
 
