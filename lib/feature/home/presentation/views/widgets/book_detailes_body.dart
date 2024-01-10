@@ -65,7 +65,7 @@ class BookDetailesBody extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          const SizedBox(height: 150, child: HomeListView()),
+          const SizedBox(height: 150, child: HomeBooksListView()),
         ],
       ),
     ));

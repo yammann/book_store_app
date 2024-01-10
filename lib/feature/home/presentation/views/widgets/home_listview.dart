@@ -1,8 +1,8 @@
 import 'package:book_store_app/feature/home/presentation/views/widgets/home_listview_item.dart';
 import 'package:flutter/material.dart';
 
-class HomeListView extends StatelessWidget {
-  const HomeListView({super.key});
+class HomeBooksListView extends StatelessWidget {
+  const HomeBooksListView({super.key});
 
   @override
   Widget build(BuildContext context) {
