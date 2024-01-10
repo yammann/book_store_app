@@ -9,9 +9,7 @@ class SplachViewBody extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Image.asset(AssetsData.logo)
-      ],
+      children: [Image.asset(AssetsData.logo)],
     );
   }
 }

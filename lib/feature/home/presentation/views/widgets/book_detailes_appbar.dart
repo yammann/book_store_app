@@ -16,11 +16,13 @@ class BookDetailesAppbar extends StatelessWidget {
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          IconButton(onPressed: () {
-            Get.to(HomeView(),transition: Transition.fade);
-          }, icon: Icon(Icons.close)),
           IconButton(
-              onPressed: () {}, icon: Icon(Icons.shopping_cart_outlined)),
+              onPressed: () {
+                Get.to(const HomeView(), transition: Transition.fade);
+              },
+              icon: const Icon(Icons.close)),
+          IconButton(
+              onPressed: () {}, icon: const Icon(Icons.shopping_cart_outlined)),
         ],
       ),
     );

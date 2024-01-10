@@ -11,8 +11,9 @@ class HomeListView extends StatelessWidget {
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
-        return const HomeListViewItem();
-      },),
+          return const HomeListViewItem();
+        },
+      ),
     );
   }
 }
