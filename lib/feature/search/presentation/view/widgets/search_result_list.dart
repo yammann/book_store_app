@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class SearchResultList extends StatelessWidget {
   const SearchResultList({super.key});
-
+  
   @override
   Widget build(BuildContext context) {
     return ListView.builder(

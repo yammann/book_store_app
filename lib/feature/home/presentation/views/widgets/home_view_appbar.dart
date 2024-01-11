@@ -27,7 +27,7 @@ class HomeAppBar extends StatelessWidget {
           const Spacer(),
           IconButton(
               onPressed: () {
-                Get.to(const SearchView(),
+                Get.to( SearchView(),
                     transition: Transition.circularReveal);
               },
               icon: const FaIcon(FontAwesomeIcons.magnifyingGlass))

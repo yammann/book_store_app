@@ -18,7 +18,7 @@ class BookListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Get.to(const BookDetailesView(), transition: Transition.fade);
+        Get.to(()=> BookDetailesView(), transition: Transition.fade,arguments: bookModel);
       },
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 5),

@@ -1,4 +1,5 @@
 import 'package:book_store_app/core/utils/style.dart';
+import 'package:book_store_app/feature/home/data/model/book/book.model.dart';
 import 'package:book_store_app/feature/home/presentation/views/widgets/book_detailes_appbar.dart';
 import 'package:book_store_app/feature/home/presentation/views/widgets/book_rate.dart';
 import 'package:book_store_app/feature/home/presentation/views/widgets/double_button_price_free.dart';
@@ -7,8 +8,8 @@ import 'package:book_store_app/feature/home/presentation/views/widgets/home_list
 import 'package:flutter/material.dart';
 
 class BookDetailesBody extends StatelessWidget {
-  const BookDetailesBody({super.key});
-
+  const BookDetailesBody({super.key,required this.bookModel});
+ final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,8 +25,8 @@ class BookDetailesBody extends StatelessWidget {
           Padding(
             padding: EdgeInsets.symmetric(
                 horizontal: MediaQuery.of(context).size.width * .20),
-            child: const HomeListViewItem(
-              url: "assets/image/lion.jpeg",
+            child:  HomeListViewItem(
+              url:bookModel.volumeInfo!.imageLinks!.thumbnail!,
             ),
           ),
           const Text(
