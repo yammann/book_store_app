@@ -17,7 +17,9 @@ class HomeBooksListView extends StatelessWidget {
               itemCount: state.books.length,
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
-                return  HomeListViewItem(url:state.books[index].volumeInfo!.imageLinks!.thumbnail! ,);
+                return HomeListViewItem(
+                  url: state.books[index].volumeInfo!.imageLinks!.thumbnail!,
+                );
               },
             ),
           );

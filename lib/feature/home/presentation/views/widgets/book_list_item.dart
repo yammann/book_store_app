@@ -1,13 +1,18 @@
 import 'package:book_store_app/constants.dart';
 import 'package:book_store_app/core/utils/style.dart';
+import 'package:book_store_app/feature/home/data/model/book/book.model.dart';
 import 'package:book_store_app/feature/home/presentation/views/book_detailes_view.dart';
 import 'package:book_store_app/feature/home/presentation/views/widgets/book_rate.dart';
+import 'package:book_store_app/feature/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 
 class BookListItem extends StatelessWidget {
-  const BookListItem({super.key});
+  const BookListItem(
+      {super.key, required this.bookModel,
+      });
+  final BookModel bookModel;
 
   @override
   Widget build(BuildContext context) {
@@ -22,18 +27,7 @@ class BookListItem extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              AspectRatio(
-                aspectRatio: 2.6 / 4,
-                child: Container(
-                  margin: const EdgeInsets.all(5),
-                  decoration: BoxDecoration(
-                    image: const DecorationImage(
-                        image: AssetImage("assets/image/lion.jpeg"),
-                        fit: BoxFit.cover),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                ),
-              ),
+             CostumBookImage(url: bookModel.volumeInfo!.imageLinks!.thumbnail!),
               const SizedBox(
                 width: 20,
               ),
@@ -43,7 +37,7 @@ class BookListItem extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Lion Sessss Lion Sessss Lion ",
+                      bookModel.volumeInfo!.title!,
                       style: Styles.textStyle20
                           .copyWith(fontFamily: kGtSectraFine),
                       maxLines: 2,
@@ -52,9 +46,11 @@ class BookListItem extends StatelessWidget {
                     const SizedBox(
                       height: 3,
                     ),
-                    const Text(
-                      "J.K Rowling",
-                      style: TextStyle(color: Colors.grey),
+                     Text(
+                      bookModel.volumeInfo!.authors![0],
+                      style: const TextStyle(color: Colors.grey),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
                     ),
                     const SizedBox(
                       height: 3,
@@ -63,11 +59,14 @@ class BookListItem extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "19.99 \$",
+                          "Free",
                           style: Styles.textStyle20
                               .copyWith(fontWeight: FontWeight.w800),
                         ),
-                        const BookRate(),
+                        BookRate(
+                          rate: bookModel.volumeInfo!.averageRating??0,
+                          count:  bookModel.volumeInfo!.ratingsCount??0,
+                        ),
                       ],
                     )
                   ],

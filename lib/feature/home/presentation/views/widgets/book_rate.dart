@@ -3,25 +3,30 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class BookRate extends StatelessWidget {
-  const BookRate({super.key});
+  const BookRate({super.key, required this.rate, required this.count});
+  final int rate;
+  final int count;
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        FaIcon(
+        const FaIcon(
           FontAwesomeIcons.solidStar,
           color: Color.fromARGB(255, 248, 223, 2),
           size: 16,
         ),
+        const SizedBox(
+          width: 4,
+        ),
         Text(
-          " 4.8",
+          rate.toString(),
           style: Styles.textStyle20,
         ),
         Text(
-          " (2390)",
-          style: TextStyle(color: Colors.grey),
+          " ($count)",
+          style: const TextStyle(color: Colors.grey),
         )
       ],
     );

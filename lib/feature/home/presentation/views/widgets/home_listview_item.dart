@@ -16,7 +16,7 @@ class HomeListViewItem extends StatelessWidget {
               fit: BoxFit.fill,
               imageUrl: url,
               errorWidget: (context, url, error) =>
-                  Icon(Icons.published_with_changes),
+                  const Icon(Icons.published_with_changes),
             )),
       ),
     );

@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:book_store_app/feature/home/data/model/book_model/book_model.dart';
+import 'package:book_store_app/feature/home/data/model/book/book.model.dart';
 import 'package:book_store_app/feature/home/data/repo/home_repos.dart';
 import 'package:equatable/equatable.dart';
 
@@ -11,8 +11,8 @@ class HomeBooksListCubit extends Cubit<HomeBooksListState> {
   HomeRepo homeRepo;
   Future<void> fetchFutureBooks() async {
     emit(HomeBooksLisLoading());
-    var result= await homeRepo.fetchFeaturedBooks();
-    result.fold((failur) => emit(HomeBooksListFailure(failur.errorMesage)), 
-    (books) => emit(HomeBooksListSucsses(books)));
+    var result = await homeRepo.fetchFeaturedBooks();
+    result.fold((failur) => emit(HomeBooksListFailure(failur.errorMesage)),
+        (books) => emit(HomeBooksListSucsses(books)));
   }
 }

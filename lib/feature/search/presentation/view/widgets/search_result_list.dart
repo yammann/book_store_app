@@ -1,4 +1,3 @@
-import 'package:book_store_app/feature/home/presentation/views/widgets/book_list_item.dart';
 import 'package:flutter/material.dart';
 
 class SearchResultList extends StatelessWidget {
@@ -8,7 +7,7 @@ class SearchResultList extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
       itemCount: 10,
-      itemBuilder: (context, index) => const BookListItem(),
+      itemBuilder: (context, index) => const Text("data"), //,
     );
   }
 }
