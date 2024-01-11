@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => HomeBooksListCubit(
             getIt.get<HomeRepoImpl>(),
-          ),
+          )..fetchFutureBooks(),
         )
       ],
       child: GetMaterialApp(

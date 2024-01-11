@@ -19,6 +19,6 @@ final class NewestBooksListSucsses extends NewestBooksListState {
 
 final class NewestBooksListFailure extends NewestBooksListState {
   final String errorMesage;
-
+  
   const NewestBooksListFailure(this.errorMesage);
 }

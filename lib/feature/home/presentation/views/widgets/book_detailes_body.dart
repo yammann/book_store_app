@@ -24,7 +24,7 @@ class BookDetailesBody extends StatelessWidget {
           Padding(
             padding: EdgeInsets.symmetric(
                 horizontal: MediaQuery.of(context).size.width * .20),
-            child: const HomeListViewItem(),
+            child: const HomeListViewItem(url:"assets/image/lion.jpeg",),
           ),
           const Text(
             "The Jungel Book",
