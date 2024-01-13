@@ -1,5 +1,4 @@
 import 'package:book_store_app/feature/home/presentation/views/widgets/book_list_item.dart';
-import 'package:book_store_app/feature/home/presentation/views/widgets/home_listview_item.dart';
 import 'package:book_store_app/feature/search/presentation/view_model/search_list_cubit/search_list_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

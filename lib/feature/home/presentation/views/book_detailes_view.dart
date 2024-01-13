@@ -14,6 +14,6 @@ class BookDetailesView extends StatelessWidget {
           create: (context) => SimillerBooksListCubit(
             getIt.get<HomeRepoImpl>(),
           )..fetchSimillerdBooks(category: bookModel?.volumeInfo?.categories?[0]??"programming"),
-          child: BookDetailesBody(bookModel: bookModel),);
+          child: Scaffold(body: BookDetailesBody(bookModel: bookModel),));
   }
 }

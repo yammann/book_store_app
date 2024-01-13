@@ -1,4 +1,5 @@
 import 'package:book_store_app/feature/home/presentation/views/widgets/home_listview_item.dart';
+import 'package:book_store_app/feature/home/presentation/views/widgets/lottie_loading.dart';
 import 'package:book_store_app/feature/home/presentation/views_model/similler_book_list_cubit/similler_books_list_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -14,6 +15,7 @@ class SimillerBooksListView extends StatelessWidget {
           return SizedBox(
             height: MediaQuery.of(context).size.height * .3,
             child: ListView.builder(
+              shrinkWrap: true,
               itemCount: state.books?.length??0,
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
@@ -30,7 +32,7 @@ class SimillerBooksListView extends StatelessWidget {
           );
         } else {
           return const Center(
-            child: CircularProgressIndicator(),
+            child: LottieLoading(),
           );
         }
       },

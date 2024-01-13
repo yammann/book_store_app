@@ -1,4 +1,5 @@
 import 'package:book_store_app/feature/home/presentation/views/widgets/home_listview_item.dart';
+import 'package:book_store_app/feature/home/presentation/views/widgets/lottie_loading.dart';
 import 'package:book_store_app/feature/home/presentation/views_model/book_list_cubit/home_books_list_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -28,11 +29,10 @@ class HomeBooksListView extends StatelessWidget {
             child: Text(state.errorMesage),
           );
         } else {
-          return const Center(
-            child: CircularProgressIndicator(),
-          );
+          return  const LottieLoading();
         }
       },
     );
   }
 }
+

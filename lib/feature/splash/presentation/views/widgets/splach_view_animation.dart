@@ -26,7 +26,7 @@ class _SplachViewAnimationState extends State<SplachViewAnimation>
   void navigateToHomeView() {
     Future.delayed(const Duration(seconds: 3), () {
       Get.to(() => const HomeView(),
-          transition: Transition.fade, duration: const Duration(seconds: 2));
+          transition: Transition.leftToRight, duration: const Duration(seconds: 1));
     });
   }
 

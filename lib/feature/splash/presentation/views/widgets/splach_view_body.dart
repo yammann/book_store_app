@@ -3,13 +3,17 @@ import 'package:flutter/material.dart';
 
 class SplachViewBody extends StatelessWidget {
   const SplachViewBody({super.key});
-
+  
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [Image.asset(AssetsData.logo)],
+    
+    return SizedBox(
+      width: double.infinity,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [Image.asset(AssetsData.logo,width:300,height: 300,fit: BoxFit.fill,)],
+      ),
     );
   }
 }
