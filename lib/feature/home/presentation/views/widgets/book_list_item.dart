@@ -9,16 +9,16 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 
 class BookListItem extends StatelessWidget {
-  const BookListItem(
+   const BookListItem(
       {super.key, required this.bookModel,
       });
   final BookModel bookModel;
-
+   final bool isHaveImage=true;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Get.to(()=> BookDetailesView(), transition: Transition.fade,arguments: bookModel);
+        Get.off(()=> BookDetailesView(bookModel: bookModel,), transition: Transition.fade,arguments: bookModel);
       },
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 5),
@@ -27,7 +27,10 @@ class BookListItem extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-             CostumBookImage(url: bookModel.volumeInfo!.imageLinks!.thumbnail!),
+             CostumBookImage(url:bookModel.volumeInfo!.imageLinks?.thumbnail==null?"https://via.placeholder.com/300"
+             :
+             bookModel.volumeInfo!.imageLinks!.thumbnail!
+             ),
               const SizedBox(
                 width: 20,
               ),

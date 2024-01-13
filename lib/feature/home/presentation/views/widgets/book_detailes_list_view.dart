@@ -3,8 +3,8 @@ import 'package:book_store_app/feature/home/presentation/views_model/newest_book
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class HomeBestListView extends StatelessWidget {
-  const HomeBestListView({super.key});
+class BookDetailesListView extends StatelessWidget {
+  const BookDetailesListView({super.key});
 
   @override
   Widget build(BuildContext context) {

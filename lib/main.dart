@@ -3,7 +3,6 @@ import 'package:book_store_app/core/utils/servise_located.dart';
 import 'package:book_store_app/feature/home/data/repo/hom_repo_imple.dart';
 import 'package:book_store_app/feature/home/presentation/views_model/book_list_cubit/home_books_list_cubit.dart';
 import 'package:book_store_app/feature/home/presentation/views_model/newest_books_list_cubit/newest_books_list_cubit.dart';
-import 'package:book_store_app/feature/home/presentation/views_model/similler_book_list_cubit/similler_books_list_cubit.dart';
 import 'package:book_store_app/feature/splash/presentation/views/splach_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

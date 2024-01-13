@@ -12,18 +12,13 @@ class BookDetailesAppbar extends StatelessWidget {
       padding: const EdgeInsets.only(
         top: 30,
       ),
-      child: Row(
-        mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          IconButton(
-              onPressed: () {
-                Get.to(const HomeView(), transition: Transition.fade);
-              },
-              icon: const Icon(Icons.close)),
-          IconButton(
-              onPressed: () {}, icon: const Icon(Icons.shopping_cart_outlined)),
-        ],
+      child: Align(
+        alignment: Alignment.centerLeft,
+        child: IconButton(
+            onPressed: () {
+              Get.off(()=> const HomeView(), transition: Transition.fade);
+            },
+            icon: const Icon(Icons.close)),
       ),
     );
   }

@@ -12,7 +12,7 @@ final class SimillerBooksListInitial extends SimillerBooksListState {}
 final class SimillerBooksLisLoading extends SimillerBooksListState {}
 
 final class SimillerBooksListSucsses extends SimillerBooksListState {
-  final List<BookModel> books;
+  final List<BookModel>? books;
 
   const SimillerBooksListSucsses(this.books);
 }

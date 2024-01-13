@@ -4,7 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class BookRate extends StatelessWidget {
   const BookRate({super.key, required this.rate, required this.count});
-  final int rate;
+  final dynamic rate;
   final int count;
 
   @override

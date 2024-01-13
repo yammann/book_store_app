@@ -1,8 +1,10 @@
+import 'package:book_store_app/feature/home/data/model/book/book.model.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class DoubleButtonPriceAndFree extends StatelessWidget {
-  const DoubleButtonPriceAndFree({super.key});
-
+  const DoubleButtonPriceAndFree({super.key, required this.bookModel});
+  final BookModel? bookModel;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -25,7 +27,7 @@ class DoubleButtonPriceAndFree extends StatelessWidget {
                       ))),
                   onPressed: () {},
                   child: const Text(
-                    "199.99 \$",
+                    "Free",
                     style: TextStyle(
                         color: Colors.black,
                         fontSize: 16,
@@ -44,9 +46,15 @@ class DoubleButtonPriceAndFree extends StatelessWidget {
                         topRight: Radius.circular(15),
                         bottomRight: Radius.circular(15),
                       ))),
-                  onPressed: () {},
+                  onPressed: () async {
+                    final Uri url =
+                        Uri.parse(bookModel?.volumeInfo?.previewLink??"");
+                    if (await canLaunchUrl(url)) {
+                      await launchUrl(url);
+                    }
+                  },
                   child: const Text(
-                    "Free Preview",
+                    "Preview",
                     style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w600,
